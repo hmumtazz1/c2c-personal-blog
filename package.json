@@ -1,0 +1,24 @@
+{
+  "name": "c2c-personal-blog",
+  "version": "1.0.0",
+  "description": "A personal blog and website that uses HTML, CSS, Javascript and node.js. The blog posts are rendered using markdown files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmumtazz1/c2c-personal-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/hmumtazz1/c2c-personal-blog/issues"
+  },
+  "homepage": "https://github.com/hmumtazz1/c2c-personal-blog#readme",
+  "dependencies": {
+    "marked": "^16.1.1"
+  }
+}
