@@ -1,22 +1,83 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #22c55e;
+  --accent-2: #06b6d4;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
 body {
-  font-family: Arial, sans-serif;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   margin: 0;
-  padding: 0;
-  background: #f9f9f9;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 20% -10%, rgba(34,197,94,.15), transparent 60%),
+              radial-gradient(1000px 700px at 120% 10%, rgba(6,182,212,.12), transparent 60%),
+              var(--bg);
 }
-nav {
-  background: #333;
-  color: #fff;
-  padding: 1em;
+.container {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
+.site-header {
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(6px);
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+.brand { font-weight: 700; letter-spacing: .4px; }
 nav a {
-  color: #fff;
+  color: var(--text);
   text-decoration: none;
-  margin-right: 1em;
+  margin-left: 16px;
+  opacity: .85;
 }
-nav a:hover {
-  text-decoration: underline;
+nav a:hover { opacity: 1; }
+.hero {
+  margin: 48px 0 24px;
+  padding: 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
 }
-main {
-  padding: 2em;
+.hero h1 { margin: 0 0 8px; font-size: 2rem; }
+.hero p { margin: 0; color: var(--muted); line-height: 1.6; }
+.post-picker { margin: 28px 0 60px; }
+.post-picker h2 { margin: 0 0 12px; }
+.picker-row { display: flex; gap: 12px; }
+select#postSelect {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: var(--panel);
+  color: var(--text);
+}
+button#readPostBtn {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: linear-gradient(180deg, rgba(34,197,94,.9), rgba(34,197,94,.75));
+  color: #06110a;
+  font-weight: 600;
+  cursor: pointer;
+}
+button#readPostBtn[disabled] {
+  opacity: .6;
+  cursor: not-allowed;
+}
+.hint { color: var(--muted); margin-top: 8px; }
+.site-footer {
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding: 24px 0;
+  color: var(--muted);
 } 

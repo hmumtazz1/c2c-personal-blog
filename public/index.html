@@ -3,17 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | C2C Personal Blog</title>
+  <title>C2C Personal Blog</title>
   <link rel="stylesheet" href="/public/styles.css">
 </head>
 <body>
-  <nav>
-    <a href="/">Home</a> |
-    <a href="/blog">Blog</a>
-  </nav>
-  <main>
-    <h1>Welcome to the C2C Personal Blog</h1>
-    <p>This is a simple blog for clinicians learning to code.</p>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">C2C Blog</div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/blog">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Clinician to Coder</h1>
+      <p>Practical notes on learning to code as a clinician—projects, lessons, and tools that actually help in practice.</p>
+    </section>
+
+    <section class="post-picker">
+      <h2>Read a post</h2>
+      <div class="picker-row">
+        <select id="postSelect" aria-label="Choose a blog post">
+          <option value="" selected disabled>Loading posts…</option>
+        </select>
+        <button id="readPostBtn" disabled>Read</button>
+      </div>
+      <p class="hint">Or view all posts on the <a href="/blog">blog page</a>.</p>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> C2C Personal Blog</p>
+    </div>
+  </footer>
+
+  <script src="/public/main.js"></script>
 </body>
 </html> 
