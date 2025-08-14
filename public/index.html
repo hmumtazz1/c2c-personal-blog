@@ -3,41 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>C2C Personal Blog</title>
+  <title>Haris Mumtaz — Clinician to Coder</title>
   <link rel="stylesheet" href="/public/styles.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container">
-      <div class="brand">C2C Blog</div>
+      <div class="brand">Haris Mumtaz</div>
       <nav>
         <a href="/">Home</a>
         <a href="/blog">Blog</a>
+        <a href="/about">About</a>
+        <a href="/newsletter">Newsletter</a>
+        <select id="headerPostSelect" class="header-post-select" aria-label="Go to a blog post">
+          <option value="" selected>Posts…</option>
+        </select>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <section class="hero">
-      <h1>Clinician to Coder</h1>
-      <p>Practical notes on learning to code as a clinician—projects, lessons, and tools that actually help in practice.</p>
+      <h1>Free Weekly Newsletter for Busy Clinicians Learning Code</h1>
+      <p>Actionable tips, projects, and tools. No fluff. Written by Haris Mumtaz.</p>
     </section>
 
-    <section class="post-picker">
-      <h2>Read a post</h2>
-      <div class="picker-row">
-        <select id="postSelect" aria-label="Choose a blog post">
-          <option value="" selected disabled>Loading posts…</option>
-        </select>
-        <button id="readPostBtn" disabled>Read</button>
+    <section class="newsletter-card">
+      <h2>Join the Newsletter</h2>
+      <p>Get one short, useful email per week. No spam. Unsubscribe anytime.</p>
+      <div class="input-row">
+        <input type="email" class="email-input" id="nlEmail" placeholder="you@example.com" aria-label="Your email">
+        <button class="btn-primary" id="nlSubmit">Sign up</button>
       </div>
-      <p class="hint">Or view all posts on the <a href="/blog">blog page</a>.</p>
+      <p class="subtle" id="nlNote">Placeholder for now — we'll wire this up later.</p>
     </section>
+
+    
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> C2C Personal Blog</p>
+      <p>© <span id="year"></span> Haris Mumtaz</p>
     </div>
   </footer>
 

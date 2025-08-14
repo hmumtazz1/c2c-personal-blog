@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Haris Mumtaz</title>
+  <link rel="stylesheet" href="/public/styles.css">
+  <meta name="description" content="About Haris Mumtaz — clinician learning to code, sharing practical notes and projects.">
+  <link rel="canonical" href="/about">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">Haris Mumtaz</div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/blog">Blog</a>
+        <a href="/about">About</a>
+        <a href="/newsletter">Newsletter</a>
+        <select id="headerPostSelect" class="header-post-select" aria-label="Go to a blog post">
+          <option value="" selected>Posts…</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>About</h1>
+      <p>I'm Haris Mumtaz — a clinician learning to code. I share concise, practical notes on projects, tools, and workflows that help busy clinicians build with software.</p>
+    </section>
+
+    <section class="card">
+      <p>My background is in healthcare. I build simple tools that solve real problems. On this site you’ll find short posts, code snippets, and experiments as I document what I learn.</p>
+      <p>If you’re a clinician learning to code, you’re in the right place.</p>
+    </section>
+
+    <section class="newsletter-card">
+      <h2>Stay in the loop</h2>
+      <p>Get a weekly email with one actionable tip you can use immediately.</p>
+      <div class="input-row">
+        <input type="email" class="email-input" id="aboutEmail" placeholder="you@example.com" aria-label="Your email">
+        <button class="btn-primary" id="aboutSubmit">Sign up</button>
+      </div>
+      <p class="subtle" id="aboutNote">Placeholder only — wiring coming soon.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Haris Mumtaz</p>
+    </div>
+  </footer>
+
+  <script src="/public/main.js"></script>
+  <script>
+    (function(){
+      const email = document.getElementById('aboutEmail');
+      const submit = document.getElementById('aboutSubmit');
+      const note = document.getElementById('aboutNote');
+      if (email && submit && note) {
+        submit.addEventListener('click', function(){
+          const v = (email.value||'').trim();
+          if (!v) { note.textContent = 'Please enter your email address.'; return; }
+          note.textContent = 'Thanks! This is a visual placeholder for now.';
+          email.value = '';
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
+

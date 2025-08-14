@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter — Haris Mumtaz</title>
+  <link rel="stylesheet" href="/public/styles.css">
+  <meta name="description" content="Join the weekly newsletter from Haris Mumtaz for practical, no-fluff tips for clinicians learning to code.">
+  <link rel="canonical" href="/newsletter">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">Haris Mumtaz</div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/blog">Blog</a>
+        <a href="/about">About</a>
+        <a href="/newsletter">Newsletter</a>
+        <select id="headerPostSelect" class="header-post-select" aria-label="Go to a blog post">
+          <option value="" selected>Posts…</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Free Weekly Newsletter</h1>
+      <p>Join other clinicians learning to code. All tactics, no fluff. Actionable tips you can apply immediately.</p>
+    </section>
+
+    <section class="newsletter-card">
+      <h2>Sign up</h2>
+      <p>Enter your email to get the next edition. You can unsubscribe anytime.</p>
+      <div class="input-row">
+        <input type="email" class="email-input" id="nlPageEmail" placeholder="you@example.com" aria-label="Your email">
+        <button class="btn-primary" id="nlPageSubmit">Sign up</button>
+      </div>
+      <p class="subtle" id="nlPageNote">This is a placeholder form — backend integration coming later.</p>
+    </section>
+
+    <section class="card">
+      <h3 style="margin-top:0">What you’ll get</h3>
+      <ul>
+        <li>One short email per week</li>
+        <li>Practical code snippets and small projects</li>
+        <li>Tools and workflows that save time</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Haris Mumtaz</p>
+    </div>
+  </footer>
+
+  <script src="/public/main.js"></script>
+  <script>
+    (function(){
+      const email = document.getElementById('nlPageEmail');
+      const submit = document.getElementById('nlPageSubmit');
+      const note = document.getElementById('nlPageNote');
+      if (email && submit && note) {
+        submit.addEventListener('click', function(){
+          const v = (email.value||'').trim();
+          if (!v) { note.textContent = 'Please enter your email address.'; return; }
+          note.textContent = 'Thanks for signing up! This is a visual placeholder for now.';
+          email.value = '';
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
+

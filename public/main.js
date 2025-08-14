@@ -2,29 +2,41 @@
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  const select = document.getElementById('postSelect');
-  const btn = document.getElementById('readPostBtn');
-  if (!select || !btn) return;
+  // Newsletter placeholder UX
+  const nlEmail = document.getElementById('nlEmail');
+  const nlSubmit = document.getElementById('nlSubmit');
+  const nlNote = document.getElementById('nlNote');
+  if (nlEmail && nlSubmit && nlNote) {
+    nlSubmit.addEventListener('click', () => {
+      const email = (nlEmail.value || '').trim();
+      if (!email) {
+        nlNote.textContent = 'Please enter your email address.';
+        return;
+      }
+      nlNote.textContent = 'Thanks! This is a visual placeholder. We will connect this soon.';
+      nlEmail.value = '';
+    });
+  }
+
+  // Header post dropdown (navigates on change)
+  const headerSelect = document.getElementById('headerPostSelect');
+  if (!headerSelect) return;
 
   fetch('/api/posts')
     .then(r => r.json())
     .then(posts => {
-      select.innerHTML = '<option value="" selected disabled>Select a post…</option>';
+      headerSelect.innerHTML = '<option value="" selected>Posts…</option>';
       posts.forEach(p => {
         const opt = document.createElement('option');
         opt.value = p.slug;
         opt.textContent = p.title || p.slug.replace(/-/g, ' ');
-        select.appendChild(opt);
+        headerSelect.appendChild(opt);
       });
-      select.addEventListener('change', () => {
-        btn.disabled = !select.value;
-      });
-      btn.addEventListener('click', () => {
-        if (select.value) window.location.href = '/blog/' + select.value;
+      headerSelect.addEventListener('change', () => {
+        if (headerSelect.value) window.location.href = '/blog/' + headerSelect.value;
       });
     })
     .catch(() => {
-      select.innerHTML = '<option value="" disabled>Could not load posts</option>';
-      btn.disabled = true;
+      headerSelect.innerHTML = '<option value="" disabled>Posts unavailable</option>';
     });
 })();
